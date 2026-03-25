@@ -143,7 +143,7 @@ class SerialReceive
 
 真实串口：**波特率、停止位、校验位必须完全一致**，否则通信失败
 
-![image-20260325171922279](E:\work\Repos\muttering\muttering\img\image-20260325171922279.png)
+![image-20260325171922279](https://raw.githubusercontent.com/BigNangua/muttering/refs/heads/main/img/image-20260325171922279.png)
 
 
 
@@ -313,7 +313,7 @@ namespace VirtualModbusDemo
 
 ```
 
-![image-20260325174855349](E:\work\Repos\muttering\muttering\img\image-20260325174855349.png)
+![image-20260325174855349](https://raw.githubusercontent.com/BigNangua/muttering/refs/heads/main/img/image-20260325174855349.png)
 
 
 
@@ -370,4 +370,4 @@ RS-485
 
 **RS-485 → 多节点、长距离、高抗干扰、工业现场总线**
 
-![6ba7b810-9dad-11d1-80b4-00c04fd430c8](E:\work\Repos\muttering\muttering\img\6ba7b810-9dad-11d1-80b4-00c04fd430c8.png)
+![6ba7b810-9dad-11d1-80b4-00c04fd430c8](https://raw.githubusercontent.com/BigNangua/muttering/refs/heads/main/img/6ba7b810-9dad-11d1-80b4-00c04fd430c8.png)
