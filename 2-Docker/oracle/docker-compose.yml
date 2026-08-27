@@ -1,0 +1,20 @@
+services:
+  oracle-free:
+    image: registry.cn-hangzhou.aliyuncs.com/zhuyijun/oracle:19c
+    container_name: oracle-free-db
+    restart: unless-stopped
+    ports:
+      - "1521:1521"
+      - "5500:5500"
+    environment:
+      ORACLE_PWD: Ora_2026_Secure!
+      ORACLE_SID: ORCL
+      ORACLE_PDB: ORCLPDB
+      ORACLE_CHARACTERSET: AL32UTF8
+    volumes:
+      - ./oradata:/opt/oracle/oradata
+      - ./logs:/opt/oracle/diag/rdbms
+      - ./backup:/opt/oracle/backup
+    shm_size: 2g
+    mem_limit: 4g
+    cpus: 2
