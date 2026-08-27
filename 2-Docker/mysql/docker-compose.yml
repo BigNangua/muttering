@@ -1,0 +1,34 @@
+services:
+  mysql:
+    # MySQL 8.0 官方镜像（配合镜像加速器使用）
+    image: mysql:8.0
+    # 容器名称
+    container_name: mysql-db
+    # 容器退出后自动重启（除非手动停止）
+    restart: unless-stopped
+    ports:
+      # 宿主机端口:容器端口
+      - "3306:3306"
+    environment:
+      # root 用户密码（必填）
+      MYSQL_ROOT_PASSWORD: Root_2026_Secure!
+      # 容器启动时自动创建的数据库
+      MYSQL_DATABASE: appdb
+      # 容器时区（北京时间）
+      TZ: Asia/Shanghai
+    volumes:
+      # 数据持久化：宿主机 ./data 映射到容器数据目录
+      - ./data:/var/lib/mysql
+      # 日志持久化：宿主机 ./logs 映射到容器日志目录
+      - ./logs:/var/log/mysql
+      # 配置文件挂载：宿主机 ./conf 下的 my.cnf 会被自动加载
+      - ./conf:/etc/mysql/conf.d
+    # 容器启动时追加的 MySQL 参数
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --default-authentication-plugin=mysql_native_password
+    deploy:
+      resources:
+        limits:
+          # CPU 限制
+          cpus: '2'
+          # 内存限制
+          memory: 2G
